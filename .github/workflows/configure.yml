@@ -1,13 +1,9 @@
-database:
-  host: localhost
-  port: 5432
-  username: admin
-  password: secret
-
-server:
-  host: 0.0.0.0
-  port: 8080
-
-logging:
-  level: INFO
-  file: /var/log/app.log
+name: CI Pipeline
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a script
+        run: echo 'Hello, World!'
